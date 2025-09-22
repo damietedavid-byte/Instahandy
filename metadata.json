@@ -1,0 +1,5 @@
+{
+  "name": "Instahandy",
+  "description": "An on-demand cleaning and handyman booking app for users in Nigeria. It allows users to book services, get price estimates, schedule appointments, and tracks the service status. It also includes dashboards for workers and administrators.",
+  "requestFramePermissions": []
+}
