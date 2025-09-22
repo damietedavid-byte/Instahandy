@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../App';
-import { UserRole } from '../types';
+import { UserRole, AppView } from '../types';
 import { BriefcaseIcon, UserIcon, WrenchIcon, ArrowLeftOnRectangleIcon } from './icons/Icons';
 
 interface HeaderProps {
@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onLogout }) => {
-    const { userRole } = useContext(AppContext);
+    const { userRole, setView } = useContext(AppContext);
 
     const getRoleInfo = () => {
         switch (userRole) {
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
-                        <button onClick={onLogout} aria-label="Go to homepage" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-md">
+                        <button onClick={() => setView(AppView.LANDING)} aria-label="Go to homepage" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-md">
                             <h1 className="text-2xl font-bold text-blue-600">Instahandy</h1>
                         </button>
                     </div>
